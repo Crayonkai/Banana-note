@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+<!--    <classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" />-->
+
+    <context id="mysql" targetRuntime="MyBatis3" defaultModelType="flat">
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.1.3/banana"
+                        userId="root"
+                        password="yaojikai" />
+        <property name="beginningDelimiter" value="`" />
+        <property name="endingDelimiter" value="`" />
+
+        <!--生成domain配置-->
+        <javaModelGenerator targetPackage="com.banana.bananaservice.domain" targetProject="src/main/java" />
+
+        <!--生成mapper xml配置-->
+        <sqlMapGenerator targetPackage="mapper"  targetProject="src/main/resources" />
+
+        <!--生成mapper配置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.banana.bananaservice.mapper"  targetProject="src/main/java" />
+
+        <table tableName="note" domainObjectName="Note" />
+    </context>
+</generatorConfiguration>
