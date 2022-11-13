@@ -1,5 +1,9 @@
 server:
-  port: 80
+  port: 8084
+  servlet:
+    context-path: /
 spring:
+  profiles:
+    active: dev
   application:
     name: banana-service

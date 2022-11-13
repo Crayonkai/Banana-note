@@ -2,9 +2,12 @@ package com.banana.bananaservice.mapper;
 
 import com.banana.bananaservice.domain.Note;
 import com.banana.bananaservice.domain.NoteExample;
-import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
+@Mapper
 public interface NoteMapper {
     long countByExample(NoteExample example);
 
