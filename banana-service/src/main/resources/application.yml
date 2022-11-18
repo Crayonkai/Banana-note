@@ -1,7 +1,9 @@
 server:
-  port: 8084
+  port: 8080
   servlet:
     context-path: /
+#  tomcat:
+#    max-http-form-post-size: 81920
 spring:
   profiles:
     active: dev
